@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.donkingliang.consecutivescroller.ConsecutiveScrollerLayout;
 import com.donkingliang.consecutivescrollerdemo.adapter.RecyclerViewAdapter;
@@ -23,7 +24,8 @@ public class SampleActivity extends AppCompatActivity {
         scrollerLayout = findViewById(R.id.scrollerLayout);
 
         WebView webView = findViewById(R.id.webView);
-        webView.loadUrl("https://github.com/donkingliang");
+        WebViewUtil.INSTANCE.initSettings(webView);
+        webView.loadUrl("https://mobile.busan.com/view/busan/view.php?code=2023051209001561232");
 
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
@@ -34,6 +36,7 @@ public class SampleActivity extends AppCompatActivity {
                 scrollerLayout.checkLayoutChange();
             }
         });
+        webView.setWebViewClient(new WebViewClient());
 
 
         RecyclerView recyclerView1 = findViewById(R.id.recyclerView1);

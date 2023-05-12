@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 group='com.github.donkingliang' // 指定group，com.github.<用户名>
 
@@ -25,9 +26,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    compileOnly 'androidx.appcompat:appcompat:1.3.1'
-    compileOnly 'androidx.recyclerview:recyclerview:1.2.1'
-    compileOnly 'androidx.viewpager2:viewpager2:1.1.0-alpha01'
+    implementation 'androidx.core:core-ktx:1.10.1'
+    compileOnly 'androidx.appcompat:appcompat:1.6.1'
+    compileOnly 'androidx.recyclerview:recyclerview:1.3.0'
+    compileOnly 'androidx.viewpager2:viewpager2:1.1.0-beta01'
 }
 
 //---------------------------------------------
